@@ -66,6 +66,11 @@ textarea{
   margin-right: 20px;
 }
 
+.top-nav h3:hover{
+color: rgb(49, 49, 180);
+  cursor: pointer;
+}
+
 /* SIDEBAR */
 .sidebar {
   width: 250px;
@@ -94,7 +99,7 @@ textarea{
   border-radius: 25px;
 }
 
-.sidebar svg:active,.top-nav svg:active, svg:active{
+.sidebar svg:active,.top-nav li:active, svg:active{
   opacity: 0.15;
 }
 
@@ -333,6 +338,26 @@ table {
     margin: 0;
   }
   .sidebar h3{
+    display: none;
+  }
+  .top-nav svg{
+    display: flex;
+  }
+
+  .top-nav{
+    display: none;
+  }
+  .golee{
+    display: flex;
+  }
+}
+
+/* 🖥️ DESKTOPS */
+ @media (min-width: 769px) {
+ body {
+    flex-direction: column;
+  }
+  .top-nav svg{
     display: none;
   }
 }
