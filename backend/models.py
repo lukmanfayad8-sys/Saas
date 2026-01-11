@@ -1,5 +1,6 @@
 # MODELS
- from pydantic import BaseModel, EmailStr
+ from pydantic import BaseModel
+ from pydantic import EmailStr
 from typing import Optional
 
 class User(BaseModel):

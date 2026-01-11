@@ -1,6 +1,7 @@
 #MAIN.PY
-from fastapi import FastAPI 
+from fastapi import FastAPI
 from routes import users, tasks, teams, dashboard
+
 
 app = FastAPI(title="Flowdesk API")
 
