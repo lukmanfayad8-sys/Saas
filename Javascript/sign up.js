@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
          else { alert("sign up Successful!")}
          
             //redirect to homepage
-            window.open("dash.chat.html","_blank")
+            window.open("/template/dash.html","_blank")
 
             //saving user credentials for login purposes
             const user={
@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("user",JSON.stringify(user));
             console.log("user")
 
-           
     })
 });
 
