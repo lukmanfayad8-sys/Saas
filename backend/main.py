@@ -2,7 +2,6 @@
 from fastapi import FastAPI
 from routes import users, tasks, teams, dashboard
 
-
 app = FastAPI(title="Flowdesk API")
 
 app.include_router(users.router, prefix="/api/users", tags=["Users"])

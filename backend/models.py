@@ -1,7 +1,7 @@
 # MODELS
  from pydantic import BaseModel
  from pydantic import EmailStr
-from typing import Optional
+ from typing   import Optional
 
 class User(BaseModel):
     name: str
