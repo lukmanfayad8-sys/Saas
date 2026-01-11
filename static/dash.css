@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+  font-family:'Roboto';
+}
+
+
+/*position of the  font svg*/
+.sidebar  svg { 
+  margin-right: 10px;
+  display: flex;
+}
+.sidebar div, .top-nav div{display:flex; align-items:center;}
+.sidebar h3, .top-nav h1{padding: 20px;}
+
+.sidebar img {
+  height: 50px;
+  border-radius: 200px;
+}
+.card-logo,.form-section{
+   margin-inline-start: 20px;
+   margin-top: 100px;
+  
+  transform: translateX(-30px);
+  animation: slideIn 0.5s ease-out forwards;
+
+}
+
+
+
+.top-nav img{
+   border-radius: 200px;
+   height: 100px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  background-image: url(/static/Blue\ Modern\ Business\ Card_20260101_225523_0000.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* text area*/
+textarea{
+  resize: none;
+  border-radius: 5px;
+}
+
+/*Nav-top*/
+.top-nav{
+  height: 30px;
+ }
+ .top-nav li,.sidebar li{
+  width:100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: all 0.15s ease;
+ }
+
+.top-nav li{
+  height: 50px;
+  margin-right: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.2);;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+ display:none;
+ flex-direction: column;
+ backdrop-filter: blur(10px);
+  transition: all 0.6s ease-in-out;
+  opacity:0;
+  transform: translateX(30px);
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+
+.sidebar svg:hover,.top-nav svg:hover,svg:hover{
+    cursor: pointer;
+  background-color:#e0e0e0;
+  transition: background-color 0.15s ease-in-out ;
+  border-radius: 25px;
+}
+
+.sidebar svg:active,.top-nav svg:active, svg:active{
+  opacity: 0.15;
+}
+
+/*for smooth deletion*/
+.fade-out{
+  opacity:0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+
+.sidebar p { 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 15px;
+  transition:  background-color 0.10s,padding 0.15s ;
+}
+
+
+.sidebar  p:active{
+opacity:0.09;
+}
+
+.sidebar  p.active:hover{
+  cursor: pointer;
+   padding: 15px;
+    background: rgba(59, 58, 58, 0.2);
+}
+
+
+
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* ADD TASK FORM */
+.form-section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  transition: all 0.9s ease-out;
+}
+
+.priority{ 
+/* margin: 5%;*/
+ display: block;
+}
+
+.form-section form {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-section input,
+.form-section select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-section button {
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(175, 175, 172);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.14s;
+}
+
+
+.form-section button:hover{
+background: #6a6adf;
+color: white;
+}
+
+.form-section button:active{
+  opacity: 0.15;
+}
+
+
+/* STATUS COLORS 
+.status-done {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+  opacity:0;
+  transform: translateX(-30px);
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+
+.card1,.card2,.card3,.card4 {
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  display:inline-block;
+  width: 250px;
+  margin: 15px;
+  box-shadow: 10px 10px  #585858;
+}
+
+
+.card1:hover,.card2:hover,.card3:hover,.card4:hover{
+  box-shadow: none;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+
+
+
+.card1{ background-color:rgb(247, 183, 66); color: #f4f4f4; animation-delay: 2s;}
+
+.card2{background-color:rgb(17, 168, 17); color: #f4f4f4;animation-delay: 3s; }
+
+.card3{background-color:rgb(39, 37, 37); color: #f4f4f4; animation-delay: 4s;}
+
+.card4{background-color: rgb(255, 76, 76); color: #f4f4f4; animation-delay: 5s;}
+
+
+@keyframes slideIn {
+   0% {opacity:0;
+    transform:translateX(-30px);}
+    100% {opacity:1;
+    transform:translateX(0);}
+}
+
+.card1 p,.card2 p,.card3 p,.card4 p{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* TABLE */
+.table-section {
+  background: beige;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top:15px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  
+  transform: translateX(-30px);
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+
+.table-section th,.table-section td{
+  padding: 10px;
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.addTaskBtn:active{
+  opacity: 0.14;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.done {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.setting{
+  display: flex;
+  padding: 15px;
+}
+
+.form-section label{
+  font-weight: bold;
+}
+
+.form-section .btndanger:hover{
+  background-color: rgb(156, 4, 4);
+}
+
+.svg-align{
+  display: flex;
+  align-items: baseline;
+}
+
+.svg-align p{
+  margin-right: 150px;
+
+}
+
+
+
+/* 📱 MOBILE */
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sidebar nav  {
+    margin: 0;
+
+  }
+}
+

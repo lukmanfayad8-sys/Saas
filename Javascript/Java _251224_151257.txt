@@ -1,0 +1,73 @@
+function getPerformanceData(tasks) {
+  const performance = {};
+
+  tasks.forEach(task => {
+    if (!performance[task.employee]) {
+      performance[task.employee] = { completed: 0, total: 0 };
+    }
+    performance[task.employee].total += 1;
+    if (task.status === "completed") {
+      performance[task.employee].completed += 1;
+    }
+  });
+
+  const labels = Object.keys(performance);
+  const completedData = labels.map(emp => performance[emp].completed);
+  const totalData = labels.map(emp => performance[emp].total);
+
+  return { labels, completedData, totalData };
+}
+
+const ctx = document.getElementById("taskPerformanceChart").getContext("2d");
+
+const chartData = getPerformanceData(tasks);
+
+const taskChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: chartData.labels,
+    datasets: [
+      {
+        label: "Completed Tasks",
+        data: chartData.completedData,
+        backgroundColor: "rgba(54, 162, 235, 0.7)"
+      },
+      {
+        label: "Total Tasks",
+        data: chartData.totalData,
+        backgroundColor: "rgba(255, 99, 132, 0.5)"
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Employee Task Performance'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { stepSize: 1 }
+      }
+    }
+  }
+});
+
+function addTask(task) {
+  tasks.push(task);
+
+  const newData = getPerformanceData(tasks);
+  taskChart.data.labels = newData.labels;
+  taskChart.data.datasets[0].data = newData.completedData;
+  taskChart.data.datasets[1].data = newData.totalData;
+  taskChart.update();
+}
+
+// Example: Add a new task
+addTask({ employee: "Kofi", title: "Task 6", status: "completed" });

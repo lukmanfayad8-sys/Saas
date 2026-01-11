@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/dash.css">
+</head>
+
+<body>
+   <!--admin view  -->
+  <!-- SIDEBAR -->
+    <nav id="sideNav" class="sidebar">
+      <ul>
+      <li id="close">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+      </li>
+      </ul>
+        <div><img src="/static/logo.png" alt="Flowdesk"><h3>Flowdesk</h3></div>
+      <p class="active"  id="dashboard"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-280h160v-160H280v160Zm240 0h160v-160H520v160ZM280-520h160v-160H280v160Zm240 0h160v-160H520v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>Dashboard</p>
+      <p  class="active" id="taskbtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q32 0 62-6t58-17l60 61q-41 20-86 31t-94 11Zm280-80v-120H640v-80h120v-120h80v120h120v80H840v120h-80ZM424-296 254-466l56-56 114 114 400-401 56 56-456 457Z"/></svg>Tasks</p>
+      <p  class="active" id="teambtn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z"/></svg>Team</p>
+      <p  class="active" id="Pricing">Subscription</p>
+      <p  class="active" id="Settings"> <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg>Settings</p>
+      <p class="active"><a href="/templates/Loginchat.html"><svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg> Logout</a></p>
+    </nav>
+ 
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    
+     <nav class="top-nav">
+       <header class="topbar" id="header"> 
+       <div><img src="/static/logo.png" alt="Flowdesk"><h1>Flowdesk</h1></div>
+      <li><span class="user">👤 Fayad</span></li>
+      <div>
+        <svg id="open" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      </div>
+    </nav>
+  </header>
+    
+ <!-- CARDS -->
+    <section class="cards" id="status">
+      <div class="card-logo">
+      <h1>Dashboard</h1>
+      </div>
+
+      <div class="card1">
+        <h3>Total Tasks</h3>
+        <div class="svg-align">
+           <p>12</p>
+          <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EFEFEF"><path d="M294-242 70-466l43-43 181 181 43 43-43 43Zm170 0L240-466l43-43 181 181 384-384 43 43-427 427Zm0-170-43-43 257-257 43 43-257 257Z"/></svg>
+      </div>
+
+      </div>
+
+      <div class="card2">
+        <h3>Completed</h3>
+        <div  class="svg-align">
+           <p>8</p>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EFEFEF"><path d="m423-329 277-277-43-43-234 234-121-121-42 42 163 165ZM180-120q-24.75 0-42.37-17.63Q120-155.25 120-180v-600q0-24.75 17.63-42.38Q155.25-840 180-840h205q5-35 32-57.5t63-22.5q36 0 63 22.5t32 57.5h205q24.75 0 42.38 17.62Q840-804.75 840-780v600q0 24.75-17.62 42.37Q804.75-120 780-120H180Zm0-60h600v-600H180v600Zm300-617q14 0 24.5-10.5T515-832q0-14-10.5-24.5T480-867q-14 0-24.5 10.5T445-832q0 14 10.5 24.5T480-797ZM180-180v-600 600Z"/></svg>
+        </div>
+      </div>
+
+      <div class="card3">
+        <h3>Pending</h3>
+         <div  class="svg-align">
+           <p>4</p>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#B7B7B7"><path d="M691-80q-78.43 0-133.72-55.28Q502-190.57 502-269t55.28-133.72Q612.57-458 691-458t133.72 55.28Q880-347.43 880-269t-55.28 133.72Q769.43-80 691-80Zm58.24-88L777-196l-75-75v-112h-39v126l86.24 89ZM180-120q-24.75 0-42.37-17.63Q120-155.25 120-180v-600q0-26 17-43t43-17h202q7-35 34.5-57.5T480-920q36 0 63.5 22.5T578-840h202q26 0 43 17t17 43v308q-15-9-29.52-15.48Q795.97-493.96 780-499v-281h-60v90H240v-90h-60v600h280q5 15 12 29.5t17 30.5H180Zm300-660q17 0 28.5-11.5T520-820q0-17-11.5-28.5T480-860q-17 0-28.5 11.5T440-820q0 17 11.5 28.5T480-780Z"/></svg>
+        </div>
+       
+      </div>
+      
+     <div class="card4">
+        <h3>Rejected</h3>
+         <div  class="svg-align">
+          <p>9</p>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EFEFEF"><path d="m336-294 144-144 144 144 42-42-144-144 144-144-42-42-144 144-144-144-42 42 144 144-144 144 42 42ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg>
+        </div>
+       
+      </div>
+    </section>
+
+
+    <!-- RECENT TASKS -->
+    <section class="table-section" id="table_3">
+      <h2>Recent Tasks</h2>
+
+      <table>
+        <thead>
+        <tr>
+          <th>Task</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      </table>
+    </section>
+
+<!-- ADD TASK FORM -->
+<section class="form-section" id="taskForm">
+  <h2>Assign New Task</h2> 
+  <form id="Newtaskbtn">
+    <input type="text" id="taskName" placeholder="Title" required>
+    <!-- Dropdown --> 
+   <select id="task_Priority" required >
+    <option value="" selected disabled >Priority</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+   </select>
+
+   <select id="task_Members" required >
+    <option value="" selected disabled >Select</option>
+    <option value="Nadia">Nadia</option>
+    <option value="Me">Me</option>
+    <option value="Fayad">Fayad</option>
+   </select>
+    <textarea placeholder="Description" id="descriptions" required></textarea>
+    <button type="submit">Add Task</button>
+  </form>
+</section>
+
+
+
+<!-- TASK TABLE For task-->
+<section class="table-section" id="table_4">
+  <h2>Tasks</h2>
+
+  <table id="taskTable">
+    <thead>
+    <tr>
+      <th>Task</th>
+      <th>Priority</th>
+      <th>Assigned to</th>
+      <th>Description</th>
+     <th> </th>
+    </tr>
+    </thead>
+    <tbody id="task-body"></tbody>
+  </table>
+</section>
+
+
+ <!-- Settings -->
+    
+      <!-- Account Settings -->
+      <section class="form-section" id="Settings-accounts">
+         <div class="Setting">
+           <h1>Settings</h1>
+          </div>
+
+        <h3>Account Settings</h3>
+
+        <label>Name</label>
+        <input type="text" value="user name">
+
+        <label>Email</label>
+        <input type="email" value="user email">
+
+        <button>Change Password</button>
+        <button class="btndanger">Delete Account</button>
+      </section>
+
+      <!-- Team Management settings -->
+      <section class="form-section" id="Settings-team-Management">
+        <h3>Team Management</h3>
+
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Member</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Mike John</td>
+            <td>Viewer</td>
+            <td>Pending</td>
+          </tr>
+        </table>
+
+        <button class="btn">Invite Member</button>
+      </section>
+
+      <!-- Notifications -->
+      <section class="form-section" id="Settings-notifications">
+        <h3>Notifications</h3>
+
+        <div>
+          <span>Email Notifications</span>
+          <input type="checkbox" checked>
+        </div>
+
+        <div>
+          <span>In-App Notifications</span>
+          <input type="checkbox" checked>
+        </div>
+
+        <div>
+          <span>Push Notifications</span>
+          <input type="checkbox">
+        </div>
+      </section>
+
+      <!-- Billing -->
+      <section class="form-section" id="Settings-billing">
+        <h3>Billing</h3>
+        <p>Plan: <strong>Pro</strong></p>
+        <p>Card: **** 1234</p>
+        <button class="btn">Change Plan</button>
+      </section>
+
+      <button id="Savebtn" class="btn primary">Save Changes</button>
+        
+
+    
+
+<!-- ADD TEAM FORM -->
+<section class="form-section" id="teamForm">
+  <h2>Add New Team</h2>
+
+  <form id="Addteambtn">
+    <input type="text" placeholder="Name" id="teamName" required>
+    <input type="email"  placeholder="E-mail" id="teamMail" required>
+    <input type="tel" placeholder="phone" id="teamTel" required>
+     <section>
+    
+   <!-- <textarea  id="description" placeholder="description"></textarea> -->
+    <button type="submit">Add Team</button>
+  </form>
+</section>
+
+   <!-- Add Team Table -->
+    <section class="table-section" id="team">
+      <h2> Team- Members</h2>
+     <label>
+      <table id="teamTable">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Tel</th>
+          <th>Del</th>
+        </tr>
+      </thead>
+      <tbody id="innertable">
+ </tbody>
+ ></tbody>
+      </table>
+      </label>
+    </section>
+   
+  </main>
+   <script src="/Javascript/dash.js" defer ></script>
+</body>
+</html>
