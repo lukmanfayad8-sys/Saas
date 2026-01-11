@@ -92,7 +92,7 @@ color: rgb(49, 49, 180);
 }
 
 
-.sidebar svg:hover,.top-nav svg:hover,svg:hover{
+.sidebar svg:hover,.top-nav svg:hover{
     cursor: pointer;
   background-color:#e0e0e0;
   transition: background-color 0.15s ease-in-out ;

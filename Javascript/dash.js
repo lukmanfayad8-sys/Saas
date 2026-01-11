@@ -35,7 +35,7 @@ const card = document.getElementById('status');
 const recent =document.getElementById('table_3');
 //not visible on dash board
 
-dashboardbtn.addEventListener('click', (dash)=>{
+dashboardbtn.addEventListener('click', ()=>{
   card.style.display='block';
   recent.style.display='block';
    team_form.style.display='none';
