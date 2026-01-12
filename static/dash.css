@@ -334,9 +334,9 @@ table {
     justify-content: space-around;
   }
 
-    .top-nav svg{
+    /*.top-nav svg{
       display: flex;
-    }
+    }*/
 
   .sidebar nav  {
     margin: 0;
@@ -370,5 +370,10 @@ table {
   .top-nav svg{
     display: none;
   }
+
+  .open {
+    display: flex;
+   }
+
 }
 
