@@ -52,7 +52,7 @@ textarea{
 .top-nav{
   height: 30px;
  }
- .top-nav li,.sidebar li{
+ .top-nav li,.sidebar li, .top-nav p{
   width:100%;
   list-style: none;
   display: flex;
@@ -330,9 +330,13 @@ table {
   
   .sidebar {
     width: 50%;
-    display: flex;
+    /*display: flex;*/
     justify-content: space-around;
   }
+
+    .top-nav svg{
+      display: flex;
+    }
 
   .sidebar nav  {
     margin: 0;
@@ -340,16 +344,22 @@ table {
   .sidebar h3{
     display: none;
   }
-  .top-nav svg{
-    display: flex;
+  .golee h1{
+    color:rgb(48, 46, 46);
   }
-
-  .top-nav{
+ 
+  .top-nav li{
     display: none;
   }
-  .golee{
+  
+   .user {
     display: flex;
-  }
+   }
+
+   .top-nav img{
+    display: none;
+   }
+
 }
 
 /* 🖥️ DESKTOPS */
