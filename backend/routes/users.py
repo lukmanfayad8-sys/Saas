@@ -2,6 +2,8 @@ from fastapi import APIRouter, HTTPException
 from models import User
 from database import users_collection
 from passlib.context import CryptContext
+from fastapi import Depends
+from auth import get_current_user
 
 router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -18,13 +20,7 @@ def register(user: User):
     users_collection.insert_one(user.dict())
     return {"message": "User registered successfully"}
 
-@router.post("/login")
-def login(email: str, password: str):
-    user = users_collection.find_one({"email": email})
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-
-    if not pwd_context.verify(password, user["password"]):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-
-    return {"message": "Login successful", "user": {"name": user["name"], "email": user["email"]}}
+@router.get("/me")
+def read_current_user(current_user: dict = Depends(get_current_user)):
+    # return a safe representation
+    return {"name": current_user.get("name"), "email": current_user.get("email"), "role": current_user.get("role")}
