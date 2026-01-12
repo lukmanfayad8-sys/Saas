@@ -1,6 +1,6 @@
 # Settings
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, HTTPException
 from database import users_collection
 from bson import ObjectId
 
