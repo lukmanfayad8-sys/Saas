@@ -1,9 +1,3 @@
-from fastapi import APIRouter, HTTPException
-from models import User
-from database import users_collection
-from passlib.context import CryptContext
-from fastapi import Depends
-from auth import get_current_user
 from fastapi import APIRouter, HTTPException, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta
