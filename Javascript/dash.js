@@ -52,7 +52,7 @@ savebtn.style.display='none';
 
 
 function loadDashboardStats() {
-  fetch("http://127.0.0.1:8000/tasks/stats")
+  fetch("http://127.0.0.1:5500/tasks/stats")
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".card1 p").innerText = data.total_tasks;
