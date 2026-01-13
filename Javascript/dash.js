@@ -1,4 +1,5 @@
 
+
 //default display
 document.addEventListener("DOMContentLoaded",()=>{
    card.style.display='block';
@@ -29,14 +30,20 @@ close.addEventListener('click',()=>{
  side_nav.style.display = 'none';
 });
 
+const body = document.getElementById('body');
+body.addEventListener('click',()=>{
+ side_nav.style.display = 'none';
+});
+
 //dashboard navi btn
 const dashboardbtn = document.getElementById('dashboard');
 //visible on Dashboard but not on task board
 const card = document.getElementById('status');
 const recent =document.getElementById('table_3');
+const dashboardbtn1=document.getElementById('dashboard1');
 //not visible on dash board
 
-dashboardbtn.addEventListener('click', ()=>{
+dashboardbtn.addEventListener('click', () => {
   card.style.display='block';
   recent.style.display='block';
    team_form.style.display='none';
@@ -51,8 +58,22 @@ savebtn.style.display='none';
 });
 
 
+dashboardbtn1.addEventListener('click', () => {
+  card.style.display='block';
+  recent.style.display='block';
+   team_form.style.display='none';
+  team_table.style.display='none';
+   task_section_form.style.display='none';
+  task_table.style.display='none';
+  account_settings .style.display='none';
+team_management_settings.style.display='none';
+notification_settings.style.display='none';
+billing_settings.style.display='none';
+savebtn.style.display='none';
+});
+
 function loadDashboardStats() {
-  fetch("http://127.0.0.1:5500/tasks/stats")
+  fetch("http://127.0.0.1:5500/api/tasks/stats/")
     .then((response) => response.json())
     .then((data) => {
       document.querySelector(".card1 p").innerText = data.total_tasks;
@@ -70,6 +91,7 @@ function loadDashboardStats() {
 
 //task navi btn
 const taskbtn = document.getElementById('taskbtn');
+const taskbtn1 = document.getElementById('taskbtn1');
 //display in task table
 const task_section_form = document.getElementById('taskForm');
 const task_table = document.getElementById('table_4');
@@ -84,8 +106,21 @@ taskbtn.addEventListener('click',()=>{
   savebtn.style.display='none';
  });
 });
+
+taskbtn1.addEventListener('click',()=>{
+  task_section_form.style.display='block';
+  task_table.style.display='block';
+   team_form.style.display='none';
+  team_table.style.display='none';
+  card.style.display='none';
+  recent.style.display='none';
+  savebtn.style.display='none';
+ });
+
+
 //team navi btn
 const teambtn = document.getElementById('teambtn');
+const teambtn1 = document.getElementById('teambtn1');
 //display in task table
 
 const team_table = document.getElementById('team');
@@ -104,8 +139,23 @@ billing_settings.style.display='none';
 savebtn.style.display ='none';
 });
 
+teambtn1.addEventListener('click',()=>{
+  team_form.style.display='block';
+  team_table.style.display='block';
+   task_section_form.style.display='none';
+  task_table.style.display='none';
+  card.style.display='none';
+  recent.style.display='none';
+  account_settings .style.display='none';
+team_management_settings.style.display='none';
+notification_settings.style.display='none';
+billing_settings.style.display='none';
+savebtn.style.display ='none';
+});
+
 //Settings navibtn
 const settingBtn = document.getElementById('Settings');
+const settingBtn1 = document.getElementById('Settings1');
 const savebtn = document.getElementById('Savebtn');
 const account_settings = document.getElementById('Settings-accounts');
 const team_management_settings = document.getElementById('Settings-team-Management');
@@ -113,6 +163,19 @@ const notification_settings = document.getElementById('Settings-notifications');
 const billing_settings = document.getElementById('Settings-billing');
 
 settingBtn.addEventListener('click',()=>{
+account_settings .style.display='block';
+team_management_settings.style.display='block';
+notification_settings.style.display='block';
+billing_settings.style.display='block';
+card.style.display='none';
+  recent.style.display='none';
+   team_form.style.display='none';
+  team_table.style.display='none';
+  task_section_form.style.display='none';
+  task_table.style.display='none';
+});
+
+settingBtn1.addEventListener('click',()=>{
 account_settings .style.display='block';
 team_management_settings.style.display='block';
 notification_settings.style.display='block';

@@ -7,12 +7,12 @@ from bson import ObjectId
 
 router = APIRouter()
 
-@router.post("/")
+@router.post("/stats")
 def create_task(task: Task):
     tasks_collection.insert_one(task.dict())
     return {"message": "Task added"}
 
-@router.get("/")
+@router.get("/stats")
 def get_tasks():
     tasks = []
     for task in tasks_collection.find():

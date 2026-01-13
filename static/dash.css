@@ -12,6 +12,12 @@
 .sidebar div, .top-nav div{display:flex; align-items:center;}
 .sidebar h3, .top-nav h1{padding: 20px;}
 
+.top-nav h1{
+  margin-right: 200px;
+  color:#e0e0e0;
+}
+
+
 .sidebar img {
   height: 50px;
   border-radius: 200px;
@@ -28,8 +34,11 @@
 
 
 .top-nav img{
-   border-radius: 200px;
-   height: 100px;
+   border-radius: 300px;
+   height: 80px;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 20px;
 }
 
 body {
@@ -49,27 +58,53 @@ textarea{
 }
 
 /*Nav-top*/
-.top-nav{
-  height: 30px;
+.top-nav{ 
+  background-color:rgb(49, 49, 194);
+  border-radius: 25px;
+  height: 100px;
+  box-shadow: #585858 10px 10px 10px;
  }
- .top-nav li,.sidebar li, .top-nav p{
+
+.top-nav li{
+  margin: 40px;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+
+.user {
+ margin-left: 40px;
+}
+
+ .top-nav li,.sidebar li{
   width:100%;
   list-style: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  transition: all 0.15s ease;
+  transition: all.5s ease;
  }
 
 .top-nav li{
   height: 50px;
-  margin-right: 20px;
+}
+
+.topbar li{
+   margin-right: 20px;
 }
 
 .top-nav h3:hover{
-color: rgb(49, 49, 180);
+color: beige;
   cursor: pointer;
 }
+
+.top-nav h3:active{
+color:#ccc;
+  transition: none;
+}
+
+
+
 
 /* SIDEBAR */
 .sidebar {
@@ -141,11 +176,16 @@ opacity:0.09;
 
 /* TOPBAR */
 .topbar {
-  display: flex;
+  display:flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
+
+.topbar h1{
+  display: flex;
+}
+
+
 /* ADD TASK FORM */
 .form-section {
   background: white;
@@ -356,7 +396,7 @@ table {
     display: flex;
    }
 
-   .top-nav img{
+   .golee{
     display: none;
    }
 
