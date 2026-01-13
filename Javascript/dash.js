@@ -15,6 +15,29 @@ savebtn.style.display='none';
 });
 
 
+function loadDashboardStats() {
+  authFetch("http://127.0.0.1:8000/tasks/stats")
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("total-tasks").textContent = data.total_tasks;
+      document.getElementById("completed-tasks").textContent = data.completed_tasks;
+      document.getElementById("pending-tasks").textContent = data.pending_tasks;
+      document.getElementById("overdue-tasks").textContent = data.overdue_tasks;
+    })
+    .catch((error) => {
+      console.error("Error fetching dashboard stats:", error);
+    });
+  }
+  loadDashboardStats();
+// Call the function to load stats when the dashboard is loaded
+
+
+
+
+
+
+
+
 // side bar toggle
 //slide-out
 const open = document.getElementById('open');
