@@ -15,28 +15,6 @@ savebtn.style.display='none';
 });
 
 
-function loadDashboardStats() {
-  authFetch("http://127.0.0.1:8000/tasks/stats")
-    .then((response) => response.json())
-    .then((data) => {
-      document.querySelector(".card1 p").textContent = data.total_tasks;
-      document.querySelector(".card2 p").textContent = data.completed_tasks;
-      document.querySelector(".card3 p").textContent = data.pending_tasks;
-      document.querySelector(".card4 p").textContent = data.overdue_tasks;
-    })
-    .catch((error) => {
-      console.error("Error fetching dashboard stats:", error);
-    });
-  }
-  loadDashboardStats();
-// Call the function to load stats when the dashboard is loaded
-
-
-
-
-
-
-
 
 // side bar toggle
 //slide-out
@@ -71,6 +49,23 @@ notification_settings.style.display='none';
 billing_settings.style.display='none';
 savebtn.style.display='none';
 });
+
+
+function loadDashboardStats() {
+  fetch("http://127.0.0.1:8000/tasks/stats")
+    .then((response) => response.json())
+    .then((data) => {
+      document.querySelector(".card1 p").textContent = data.total_tasks;
+      document.querySelector(".card2 p").textContent = data.completed_tasks;
+      document.querySelector(".card3 p").textContent = data.pending_tasks;
+      document.querySelector(".card4 p").textContent = data.overdue_tasks;
+    })
+    .catch((error) => {
+      console.error("Error fetching dashboard stats:", error);
+    });
+  }
+  loadDashboardStats();
+// Call the function to load stats when the dashboard is loaded
 
 
 //task navi btn
