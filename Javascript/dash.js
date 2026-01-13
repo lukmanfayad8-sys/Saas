@@ -55,10 +55,10 @@ function loadDashboardStats() {
   fetch("http://127.0.0.1:8000/tasks/stats")
     .then((response) => response.json())
     .then((data) => {
-      document.querySelector(".card1 p").textContent = data.total_tasks;
-      document.querySelector(".card2 p").textContent = data.completed_tasks;
-      document.querySelector(".card3 p").textContent = data.pending_tasks;
-      document.querySelector(".card4 p").textContent = data.overdue_tasks;
+      document.querySelector(".card1 p").innerText = data.total_tasks;
+      document.querySelector(".card2 p").innerText = data.completed_tasks;
+      document.querySelector(".card3 p").innerText = data.pending_tasks;
+      document.querySelector(".card4 p").innerText = data.overdue_tasks;
     })
     .catch((error) => {
       console.error("Error fetching dashboard stats:", error);
